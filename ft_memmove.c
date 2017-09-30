@@ -1,17 +1,20 @@
 #include "libft.h"
 
+
+
 void* ft_memmove(void* dst, const void *src, size_t len)
 {
-
 	const char* a;
+	char* d;
 
+	d = (char*)dst;
 	a = src;
 
-	while (n > 0)
+	while ((int)len > 0)
 	{
-		n--;
-		*dst = *a;
-		dst++;
+		len--;
+		*d = *a;
+		d++;
 		a++;
 	}
 
