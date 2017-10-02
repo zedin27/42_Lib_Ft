@@ -2,11 +2,9 @@
 
 void ft_putnbr_fd(int n, int fd)
 {
-	int a;
-
-	if (n > 2147483647 || n < -2147483647)
+	if (n == -2147483648)
 	{
-		write(2, "error: exceeds max signed int value", 35);
+		write(fd, "-2147483648", 11);
 		return;
 	}
 	if (n < 0)
@@ -18,6 +16,6 @@ void ft_putnbr_fd(int n, int fd)
 	{
 		ft_putnbr_fd(n/10, fd);
 	}
-	a = (n % 10) + '0';
-	write(fd, &a, 1);
+	n = (n % 10) + '0';
+	write(fd, &n, 1);
 }
