@@ -1,10 +1,21 @@
 #include "libft.h"
 
-char* ft_strcpy(char* dst, const char* src)
-{
+/*
+**excuse me what is the difference between dst and &dst[0]
+**fails if take out save and try to manipulate dst directly
+*/
 
-    while ((*dst++ = *src++))
-        ;
+ char* ft_strcpy(char* dst, const char* src)   
+   {   
 
-    return (dst);
-}
+ 	  char* save; 
+ 	  save = dst; 
+
+       while ((*save++ = *src++))   
+           ;   
+
+
+       return (&dst[0]);   
+
+   }   
+
