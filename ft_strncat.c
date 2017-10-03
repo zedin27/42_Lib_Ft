@@ -1,14 +1,26 @@
 #include "libft.h"
 
+/*
+**the if statement in the second while loop is sketchy
+**might want to revist it
+*/
+
 char* ft_strncat(char* s1, const char* s2, size_t n)
 {
 
-	while (*s1 != '\0')
-		s1++;
+	char* a;
+	size_t b;
+	a = s1;
+	b = 0;
 
-	if (*s1 == '\0')
+	while (*a != '\0')
+		a++;
+
+	while((*a++ = *s2++))
 	{
-		s1 = ft_strncpy(s1, s2, n);
+		if (b >= (n - 1))
+			break;
+		b++;
 	}
 
 	return (s1);
