@@ -6,13 +6,12 @@ void ft_striteri(char* s, void (*f)(unsigned int, char*))
 	unsigned int z;
 
 	z = 0;
-	a = strlen(s);
+	a = ft_strlen(s);
 
 	while(z < a)
 	{
-		f(a, s);
+		f(z, s);
 		s++;
 		z++;
 	}
-
 }

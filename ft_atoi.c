@@ -2,33 +2,43 @@
 
 int ft_atoi(const char* str)
 {
-	int result;
+	long result;
 	int bool;
 
 	bool = 1;
 	result = 0;
 
-	while (*str == ' ')
-		str++;
-
-	if (*str == '-')
+	while (*str != '\0')
 	{
-		str++;
-		bool = -1;
-	}
+		while(*str == ' ' || *str == '\t' || *str == '\n' || *str == '\v' || *str == '\f' || *str == '\r')
+			str++;
+		if (*str == '-')
+		{
+			str++;
+			bool = -1;
+		}
 
-	while(*str != '\0')
-	{
-		if (*str >= '0' && *str <= '9')
+		while (*str >= '0' && *str <= '9')
 		{
 			result = result * 10;
 			result = result + (*str - '0');
 			str++;
 		}
-		else
+		if (*str < '0' || *str > '9')
 			break;
+		str++;
 	}
+
+	if (result == -2147483648)
+		return(-1);
+	if (result < -2147483649)
+		return bool == 1 ? -1 : 0;
+
 	result = (result * bool);
 	return (result);
 }
+
+/* 	while (*str == ' ') */
+/* 	while (*str != '-' && *str > '9' && *str < '0') */
+/* 		str++; */
 
