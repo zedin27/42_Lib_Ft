@@ -1,25 +1,28 @@
 #include "libft.h"
 
 /*
-**all these casts seem janky as fuck tbh
+** revist this if only to properly learn what its doing
 */
 
-void* ft_memccpy(void* dst, const void* src, int c, size_t n)
+void *ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	
-	unsigned char* s;
-	unsigned char* d;
-	s = (unsigned char*)src;
-	d = (unsigned char*)dst;
+	unsigned int i;
+	char	*d;
+	char *s;
+	char *y; 
 
-	while ((int)--n >= 0)
+	d = (char*)dst;
+	s = (char*)src;
+	i = 0;
+	y = 0;
+
+	while (i < n && y == 0)
 	{
-		if ((*d = *s) == (unsigned char)c)
-			return (dst);
-		d++;
-		s++;
-		
+		d[i] = s[i];
+		if (s[i] == ((char)c))
+			y = d + i + 1;
+		i++;
 	}
-	return (NULL);
-
+	return (y);
 }
+
