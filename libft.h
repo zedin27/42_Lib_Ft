@@ -53,7 +53,7 @@ char* ft_strnstr(const char *big, const char *little, size_t len);
 char* ft_strrchr(const char *s, int c);
 //	ft_strsplit
 char* ft_strstr(const char *big, const char *little);
-// 	ft_strsub
+char *ft_strsub(char const *s, unsigned int start, size_t len);
 //	ft_strtrim
 int ft_tolower(int a);
 int ft_toupper(int a);
