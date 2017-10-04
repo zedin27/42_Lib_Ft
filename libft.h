@@ -43,7 +43,7 @@ void ft_striteri(char* s, void (*f)(unsigned int, char*));
 // 	ft_strlcat
 size_t ft_strlen(const char *s);
 char *ft_strmap(char const *s, char (*f)(char));
-//	ft_strmapi
+char *ft_strmapi(char const*s, char (*f)(unsigned int, char));
 char* ft_strncat(char* s1, const char* s2, size_t n);
 int ft_strncmp(const char *s1, const char *s2, size_t n);
 char* ft_strncpy(char* dst, const char* src, size_t len);
