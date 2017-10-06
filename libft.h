@@ -7,6 +7,7 @@
 
 int ft_atoi(const char* str);
 void ft_bzero(void *s, size_t n);
+size_t ft_intlen(int n);
 char *ft_itoa(int n);
 int ft_isalnum(int c);
 int ft_isalpha(int c);
