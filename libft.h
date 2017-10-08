@@ -14,6 +14,7 @@ int ft_isalpha(int c);
 int ft_isascii(int c);
 int ft_isdigit(int c);
 int ft_isprint(int c);
+int ft_isspace(int a);
 void* ft_memalloc(size_t size);
 void* ft_memccpy(void* dst, const void* src, int c, size_t n);
 void* ft_memchr(const void *s, int c, size_t n);
@@ -55,7 +56,7 @@ char* ft_strrchr(const char *s, int c);
 //	ft_strsplit
 char* ft_strstr(const char *big, const char *little);
 char *ft_strsub(char const *s, unsigned int start, size_t len);
-//	ft_strtrim
+char *ft_strtrim(char const *s);
 int ft_tolower(int a);
 int ft_toupper(int a);
 
