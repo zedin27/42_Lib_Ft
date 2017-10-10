@@ -42,7 +42,7 @@ int ft_strequ(const char *s1, const char *s2);
 void ft_striter(char *s, void (*f)(char*));
 void ft_striteri(char* s, void (*f)(unsigned int, char*));
 char *ft_strjoin(char const *s1, char const *s2);
-// 	ft_strlcat
+size_t ft_strlcat(char *dst, const char *src, size_t size);
 size_t ft_strlen(const char *s);
 char *ft_strmap(char const *s, char (*f)(char));
 char *ft_strmapi(char const*s, char (*f)(unsigned int, char));
