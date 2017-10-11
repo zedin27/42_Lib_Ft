@@ -7,6 +7,7 @@
 
 int ft_atoi(const char* str);
 void ft_bzero(void *s, size_t n);
+int ft_delimitcount(char *str, int a);
 size_t ft_intlen(int n);
 char *ft_itoa(int n);
 int ft_isalnum(int c);
@@ -53,7 +54,7 @@ int ft_strnequ(const char *s1, const char *s2, size_t n);
 char *ft_strnew(size_t size);
 char* ft_strnstr(const char *big, const char *little, size_t len);
 char* ft_strrchr(const char *s, int c);
-//	ft_strsplit
+char **ft_strsplit(char const *s, char c);
 char* ft_strstr(const char *big, const char *little);
 char *ft_strsub(char const *s, unsigned int start, size_t len);
 char *ft_strtrim(char const *s);
