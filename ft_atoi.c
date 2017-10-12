@@ -10,7 +10,7 @@ int ft_atoi(const char* str)
 
 	while (*str != '\0')
 	{
-		while(*str == ' ' || *str == '\t' || *str == '\n' || *str == '\v' || *str == '\f' || *str == '\r')
+		while(ft_isspace((int)*str) == 1)
 			str++;
 		if (*str == '-')
 		{
