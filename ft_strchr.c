@@ -1,39 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: smaddux <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/10/12 14:52:54 by smaddux           #+#    #+#             */
+/*   Updated: 2017/10/12 14:53:55 by smaddux          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-/* char* ft_strchr(const char *s, int c) */
-/* { */
-/* 	size_t a; */
-/* 	size_t b; */
-/* 	char* z; */
-
-/* 	a = ft_strlen(s); */
-/* 	b = 0; */
-/* 	z = (char*)s; */
-
-/* 	while(b < a) */
-/* 	{ */
-/* 		if (*z == (char)c) */
-/* 			return(z); */
-/* 		z++; */
-/* 		b++; */
-/* 	} */
-/* 	return(NULL); */
-/* } */
-
-char* ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	char* z;
+	char	*z;
 
 	z = (char*)s;
-
 	if (*z == (char)c)
-		return(z);
-
-	while(*z)
+		return (z);
+	while (*z)
 	{
 		z++;
 		if (*z == (char)c)
-			return(z);
+			return (z);
 	}
-	return(NULL);
+	return (NULL);
 }

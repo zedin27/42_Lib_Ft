@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_delimitcount.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: smaddux <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/10/12 14:00:58 by smaddux           #+#    #+#             */
+/*   Updated: 2017/10/12 14:02:51 by smaddux          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_delimitcount(char *str, int a)
 {
 	int n;
-	n = 0;
 
+	n = 0;
 	while (*str)
 	{
 		if (*str != (char)a)
@@ -19,17 +31,3 @@ int	ft_delimitcount(char *str, int a)
 	}
 	return (n);
 }
-
-/* int main (int argc, char* argv[]) */
-/* { */
-/* 	if (argc != 2) */
-/* 	{ */
-/* 		printf("Pterodactyls pulled Santa's sled during the Cretaceous\n"); */
-/* 		return (0); */
-/* 	} */
-
-
-/* 	printf("%d\n", ft_delimitcount(argv[1], ' ')); */
-	
-/* 	return (26); */
-/* } */

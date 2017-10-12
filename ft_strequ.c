@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: smaddux <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/10/12 15:15:33 by smaddux           #+#    #+#             */
+/*   Updated: 2017/10/12 15:15:48 by smaddux          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int ft_strequ(const char *s1, const char *s2)
+int	ft_strequ(const char *s1, const char *s2)
 {
 	while (*s1 == *s2 && (*s1 != '\0' || *s2 != '\0'))
 	{
@@ -9,9 +21,8 @@ int ft_strequ(const char *s1, const char *s2)
 	}
 	if (*s1 != *s2)
 	{
-		return(0);
+		return (0);
 	}
-
 	else
 		return (1);
 }
