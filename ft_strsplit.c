@@ -6,7 +6,7 @@
 /*   By: smaddux <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/12 15:37:15 by smaddux           #+#    #+#             */
-/*   Updated: 2017/10/13 01:36:58 by smaddux          ###   ########.fr       */
+/*   Updated: 2017/10/13 02:00:54 by smaddux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,118 +16,101 @@
 **y0 I need a word count function fml
 */
 
- char	**ft_strsplit(char const *s, char c) 
- { 
- 	int		a; 
- 	int		i; 
- 	int		z; 
- 	char	*y; 
- 	char	**b; 
 
- 	if (s == NULL) 
- 		return (NULL); 
- 	a = ft_delimitcount((char*)s, (int)c); 
- 	i = 0; 
- 	z = 0; 
- 	y = (char*)s; 
- 	b = malloc(sizeof(char*) * (a + 1)); 
- 	if (b == NULL) 
- 		return (NULL); 
- 	while (i < (a) && *s) 
- 	{ 
- 		while (*s != c) 
- 		{ 
- 			z++; 
- 			s++; 
- 		} 
- 		if (z != 0) 
- 		{ 
- 			b[i] = malloc((z) * sizeof(char)); 
-			if(b[i] == NULL)
+
+static char *ft_strshuffle(char const *s, int length, long c)
+{
+	char *a;
+
+	a = ft_strnew(length);
+	if (a == NULL)
+		return (NULL);
+	a[length--] = '\0';
+	while (length >= 0)
+		a[length--] = s[c--];
+	return(a);
+}
+
+static char **ft_strmicrosplit(char const *s, char **col, int col_len, char a)
+{
+	int	dex;
+	int	str_len;
+	long d;
+
+	d = 0;
+	dex = 0;
+
+	while (dex < col_len)
+	{
+		str_len = 0;
+			while (s[d] && s[d] == a)
+				d++;
+			while (s[d] && s[d] != a)
 			{
-				free(b);
-				return (NULL);
+				d++;
+				str_len++;
 			}
- 			b[i] = ft_strncpy(b[i], y, z); 
- 			y += z; 
- 			z = 0; 
- 			i++; 
- 		} 
- 		y++; 
- 		s++; 
- 	} 
- 	b[i] = 0; 
- 	return (b); 
- } 
+			if (s[d] == '\0' || s[d] == a)
+				col[dex++] = ft_strshuffle(s, str_len, d - 1);
+	}
+	col[dex] = NULL;
+	return (col);
+}
 
-//KILL ME
+char	**ft_strsplit(char const *s, char c)
+{
+	int col_len;
+	char **col;
+	
+	if (s == NULL)
+		return (NULL);
+	col_len = ft_delimitcount((char*)s, c);
+	if (!(col = (char **)malloc(sizeof(char *) * col_len + 1)))
+		return (NULL);
+	return(ft_strmicrosplit(s, col, col_len, c));
+}
 
-/* static int        ft_strcount(char const *s, char c) */
-/* { */
-/*     int        count; */
-/*     size_t    i; */
+/*  char	**ft_strsplit(char const *s, char c)  */
+/*  {  */
+/*  	int		a;  */
+/*  	int		i;  */
+/*  	int		z;  */
+/*  	char	*y;  */
+/*  	char	**b;  */
 
-/*     i = 0; */
-/*     count = 0; */
-/*     while (s[i]) */
-/*     { */
-/*         while (s[i] == c) */
-/*             i++; */
-/*         while (s[i] && s[i] != c) */
-/*             i++; */
-/*         if (s[i - 1] != c) */
-/*             count++; */
-/*     } */
-/*     return (count); */
-/* } */
+/*  	if (s == NULL)  */
+/*  		return (NULL);  */
+/*  	a = ft_delimitcount((char*)s, (int)c);  */
+/*  	i = 0;  */
+/*  	z = 0;  */
+/*  	y = (char*)s;  */
+/*  	b = malloc(sizeof(char*) * (a + 1));  */
+/*  	if (b == NULL)  */
+/*  		return (NULL);  */
+/*  	while (i < (a) && *s)  */
+/*  	{  */
+/*  		while (*s != c)  */
+/*  		{  */
+/*  			z++;  */
+/*  			s++;  */
+/*  		}  */
+/*  		if (z != 0)  */
+/*  		{  */
+/*  			b[i] = malloc((z) * sizeof(char));  */
+/* 			if(b[i] == NULL) */
+/* 			{ */
+/* 				free(b); */
+/* 				return (NULL); */
+/* 			} */
+/*  			b[i] = ft_strncpy(b[i], y, z);  */
+/*  			y += z;  */
+/*  			z = 0;  */
+/*  			i++;  */
+/*  		}  */
+/*  		y++;  */
+/*  		s++;  */
+/*  	}  */
+/*  	b[i] = 0;  */
+/*  	return (b);  */
+/*  }  */
 
-/* static char    *ft_strsep(char const *s, int len, long i) */
-/* { */
-/*     char    *str; */
-
-/*     str = ft_strnew(len); */
-/*     if (str == NULL) */
-/*         return (NULL); */
-/*     str[len--] = '\0'; */
-/*     while (len >= 0) */
-/*         str[len--] = s[i--]; */
-/*     return (str); */
-/* } */
-
-/* static char    **ft_strsubsplit(char const *s, char **arr, int arr_len, char c) */
-/* { */
-/*     int        index; */
-/*     int        str_len; */
-/*     long    i; */
-
-/*     i = 0; */
-/*     index = 0; */
-/*     while (index < arr_len) */
-/*     { */
-/*         str_len = 0; */
-/*         while (s[i] && s[i] == c) */
-/*             i++; */
-/*         while (s[i] && s[i] != c) */
-/*         { */
-/*             i++; */
-/*             str_len++; */
-/*         } */
-/*         if (s[i] == '\0' || s[i] == c) */
-/*             arr[index++] = ft_strsep(s, str_len, i - 1); */
-/*     } */
-/*     arr[index] = NULL; */
-/*     return (arr); */
-/* } */
-
-/* char        **ft_strsplit(char const *s, char c) */
-/* { */
-/*     int        arr_len; */
-/*     char    **arr; */
-
-/*     if (s == NULL) */
-/*         return (NULL); */
-/*     arr_len = ft_strcount(s, c); */
-/*     if (!(arr = (char **)malloc(sizeof(char *) * arr_len + 1))) */
-/*         return (NULL); */
-/*     return (ft_strsubsplit(s, arr, arr_len, c)); */
-/* } */
