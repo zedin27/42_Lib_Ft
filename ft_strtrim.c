@@ -6,7 +6,7 @@
 /*   By: smaddux <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/12 15:45:56 by smaddux           #+#    #+#             */
-/*   Updated: 2017/10/12 23:50:11 by smaddux          ###   ########.fr       */
+/*   Updated: 2017/10/12 23:53:17 by smaddux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char		*ft_strtrim(char const *s)
 		return (ft_strnew(0));
 	c = ft_boundspacecount(s);
 	d = ft_strlen(a) - 1;
-	while (a[d] == ' ' || a[d] == '\n' || a[d] == '\t')
+	while (!a[d] || a[d] == ' ' || a[d] == '\n' || a[d] == '\t')
 		d--;
 	b = ft_strnew(ft_strlen(s) - c + 1) ;
 //	b = malloc(sizeof(char) * (ft_strlen(s) - c + 1));
