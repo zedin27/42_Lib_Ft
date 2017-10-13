@@ -6,32 +6,29 @@
 /*   By: smaddux <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/12 14:11:51 by smaddux           #+#    #+#             */
-/*   Updated: 2017/10/13 03:48:59 by smaddux          ###   ########.fr       */
+/*   Updated: 2017/10/13 03:54:28 by smaddux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char* ft_intache(void)
+static char	*ft_intache(void)
 {
-	char *a;
+	char	*a;
+
 	a = ft_strnew(12);
 	a = ft_strcpy(a, "-2147483648");
 	return (a);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	int		b;
 	char	*a;
 
 	b = 0;
 	if (n == -2147483648)
-	{
-//		a = ft_strnew(12);
-//		a = ft_strcpy(a, "-2147483648");
 		return (ft_intache());
-	}
 	if (n < 0)
 	{
 		n = n * -1;
@@ -46,7 +43,7 @@ char	*ft_itoa(int n)
 		n = (n / 10);
 	}
 	a[b] = (n + '0');
-	if (b-- == 1) 
-		a[b] = '-'; 
-	return (a); 
+	if (b-- == 1)
+		a[b] = '-';
+	return (a);
 }
