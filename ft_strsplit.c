@@ -6,7 +6,7 @@
 /*   By: smaddux <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/12 15:37:15 by smaddux           #+#    #+#             */
-/*   Updated: 2017/10/12 15:38:18 by smaddux          ###   ########.fr       */
+/*   Updated: 2017/10/12 17:02:58 by smaddux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ char	**ft_strsplit(char const *s, char c)
 	char	*y;
 	char	**b;
 
+	if (s == NULL)
+		return (NULL);
 	a = ft_delimitcount((char*)s, (int)c);
 	i = 0;
 	z = 0;

@@ -6,7 +6,7 @@
 /*   By: smaddux <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/12 14:20:07 by smaddux           #+#    #+#             */
-/*   Updated: 2017/10/12 14:20:08 by smaddux          ###   ########.fr       */
+/*   Updated: 2017/10/12 17:06:02 by smaddux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
+	if (lst == NULL)
+		return ;
 	while (lst->next != NULL)
 	{
 		f(lst);

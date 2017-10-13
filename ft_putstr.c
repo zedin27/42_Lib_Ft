@@ -6,7 +6,7 @@
 /*   By: smaddux <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/12 15:58:44 by smaddux           #+#    #+#             */
-/*   Updated: 2017/10/12 15:58:51 by smaddux          ###   ########.fr       */
+/*   Updated: 2017/10/12 17:04:12 by smaddux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putstr(char const *s)
 {
+	if (s == NULL)
+		return ;
 	while (*s != '\0')
 	{
 		ft_putchar(*s);

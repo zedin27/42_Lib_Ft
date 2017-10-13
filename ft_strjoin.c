@@ -6,7 +6,7 @@
 /*   By: smaddux <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/12 15:19:17 by smaddux           #+#    #+#             */
-/*   Updated: 2017/10/12 15:20:28 by smaddux          ###   ########.fr       */
+/*   Updated: 2017/10/12 16:59:31 by smaddux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		c;
 	int		d;
 
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
 	b = ft_strlen(s1);
 	c = ft_strlen(s2);
 	a = malloc(sizeof(char) * (b + c + 1));

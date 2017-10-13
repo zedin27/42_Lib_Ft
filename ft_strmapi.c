@@ -6,7 +6,7 @@
 /*   By: smaddux <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/12 15:26:05 by smaddux           #+#    #+#             */
-/*   Updated: 2017/10/12 15:26:54 by smaddux          ###   ########.fr       */
+/*   Updated: 2017/10/12 16:53:27 by smaddux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	z;
 	char			*c;
 
+	if (s == NULL)
+		return (NULL);
 	z = 0;
 	a = ft_strlen(s);
 	c = malloc(sizeof(char) * (a + 1));

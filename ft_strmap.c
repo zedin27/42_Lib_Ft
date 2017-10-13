@@ -6,7 +6,7 @@
 /*   By: smaddux <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/12 15:24:52 by smaddux           #+#    #+#             */
-/*   Updated: 2017/10/12 15:25:34 by smaddux          ###   ########.fr       */
+/*   Updated: 2017/10/12 16:52:07 by smaddux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	int		b;
 	char	*c;
 
+	if (s == NULL)
+		return (NULL);
 	a = 0;
 	b = ft_strlen(s);
 	c = malloc(sizeof(char) * (b + 1));
