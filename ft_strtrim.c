@@ -6,7 +6,7 @@
 /*   By: smaddux <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/12 15:45:56 by smaddux           #+#    #+#             */
-/*   Updated: 2017/10/12 22:35:59 by smaddux          ###   ########.fr       */
+/*   Updated: 2017/10/12 23:13:12 by smaddux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,24 @@
 ** ft_strnew(0) is more consistent than simply returning "" ?
 */
 
-static int	ft_boundspacecount(char const *a)
-{
-	char	*b;
-	int		c;
-	int		d;
+/* static int	ft_boundspacecount(char const *a) */
+/* { */
+/* 	char	*b; */
+/* 	int		c; */
+/* 	int		d; */
 
-	b = (char*)a;
-	c = 0;
-	while (*b == ' ' || *b == '\n' || *b == '\t')
-	{
-		b++;
-		c++;
-	}
-	d = ft_strlen(b);
-	while (b[--d] == ' ' || b[d] == '\n' || b[d] == '\t')
-		c++;
-	return (c);
-}
+/* 	b = (char*)a; */
+/* 	c = 0; */
+/* 	while (*b == ' ' || *b == '\n' || *b == '\t') */
+/* 	{ */
+/* 		b++; */
+/* 		c++; */
+/* 	} */
+/* 	d = ft_strlen(b); */
+/* 	while (b[--d] == ' ' || b[d] == '\n' || b[d] == '\t') */
+/* 		c++; */
+/* 	return (c); */
+/* } */
 
 char		*ft_strtrim(char const *s)
 {
