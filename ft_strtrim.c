@@ -6,7 +6,7 @@
 /*   By: smaddux <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/12 15:45:56 by smaddux           #+#    #+#             */
-/*   Updated: 2017/10/12 22:26:27 by smaddux          ###   ########.fr       */
+/*   Updated: 2017/10/12 22:32:39 by smaddux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char		*ft_strtrim(char const *s)
 		return (NULL);
 	a = (char*)s;
 	if (*a == '\0')
-		return ((char*)s);
+		return (ft_strnew(0));
 	while (*a == ' ' || *a == '\n' || *a == '\t')
 		a++;
 	if (*a == '\0')
