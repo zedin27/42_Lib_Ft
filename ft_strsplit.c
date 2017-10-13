@@ -6,7 +6,7 @@
 /*   By: smaddux <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/12 15:37:15 by smaddux           #+#    #+#             */
-/*   Updated: 2017/10/13 01:30:06 by smaddux          ###   ########.fr       */
+/*   Updated: 2017/10/13 01:36:58 by smaddux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,12 @@
  		if (z != 0) 
  		{ 
  			b[i] = malloc((z) * sizeof(char)); 
- 			b[i] = ft_strncpy(b[i], &y, z); 
+			if(b[i] == NULL)
+			{
+				free(b);
+				return (NULL);
+			}
+ 			b[i] = ft_strncpy(b[i], y, z); 
  			y += z; 
  			z = 0; 
  			i++; 
