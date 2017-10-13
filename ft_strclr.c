@@ -6,7 +6,7 @@
 /*   By: smaddux <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/12 14:54:23 by smaddux           #+#    #+#             */
-/*   Updated: 2017/10/12 16:48:47 by smaddux          ###   ########.fr       */
+/*   Updated: 2017/10/13 02:28:18 by smaddux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_strclr(char *s)
 {
-	if (s == NULL)
-		return ;
 	char	*a;
 
+	if (s == NULL)
+		return ;
 	a = s;
 	while (*a != '\0')
 	{

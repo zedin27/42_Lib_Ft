@@ -6,7 +6,7 @@
 /*   By: smaddux <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/12 15:34:30 by smaddux           #+#    #+#             */
-/*   Updated: 2017/10/12 20:02:44 by smaddux          ###   ########.fr       */
+/*   Updated: 2017/10/13 02:33:08 by smaddux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,12 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	while (*big != '\0' && (a < len))
 	{
-
 		if (ft_strncmp(big, little, b) == 0)
 		{
-			if(len - a >= b)
+			if (len - a >= b)
 				return ((char*)big);
-			else 
-				return(NULL);
+			else
+				return (NULL);
 		}
 		a++;
 		big++;

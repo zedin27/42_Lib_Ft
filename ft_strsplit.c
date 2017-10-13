@@ -6,7 +6,7 @@
 /*   By: smaddux <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/12 15:37:15 by smaddux           #+#    #+#             */
-/*   Updated: 2017/10/13 02:00:54 by smaddux          ###   ########.fr       */
+/*   Updated: 2017/10/13 02:33:55 by smaddux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 /*
 **y0 I need a word count function fml
 */
-
-
 
 static char *ft_strshuffle(char const *s, int length, long c)
 {
@@ -69,48 +67,3 @@ char	**ft_strsplit(char const *s, char c)
 		return (NULL);
 	return(ft_strmicrosplit(s, col, col_len, c));
 }
-
-/*  char	**ft_strsplit(char const *s, char c)  */
-/*  {  */
-/*  	int		a;  */
-/*  	int		i;  */
-/*  	int		z;  */
-/*  	char	*y;  */
-/*  	char	**b;  */
-
-/*  	if (s == NULL)  */
-/*  		return (NULL);  */
-/*  	a = ft_delimitcount((char*)s, (int)c);  */
-/*  	i = 0;  */
-/*  	z = 0;  */
-/*  	y = (char*)s;  */
-/*  	b = malloc(sizeof(char*) * (a + 1));  */
-/*  	if (b == NULL)  */
-/*  		return (NULL);  */
-/*  	while (i < (a) && *s)  */
-/*  	{  */
-/*  		while (*s != c)  */
-/*  		{  */
-/*  			z++;  */
-/*  			s++;  */
-/*  		}  */
-/*  		if (z != 0)  */
-/*  		{  */
-/*  			b[i] = malloc((z) * sizeof(char));  */
-/* 			if(b[i] == NULL) */
-/* 			{ */
-/* 				free(b); */
-/* 				return (NULL); */
-/* 			} */
-/*  			b[i] = ft_strncpy(b[i], y, z);  */
-/*  			y += z;  */
-/*  			z = 0;  */
-/*  			i++;  */
-/*  		}  */
-/*  		y++;  */
-/*  		s++;  */
-/*  	}  */
-/*  	b[i] = 0;  */
-/*  	return (b);  */
-/*  }  */
-

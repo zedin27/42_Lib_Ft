@@ -6,7 +6,7 @@
 /*   By: smaddux <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/12 15:27:24 by smaddux           #+#    #+#             */
-/*   Updated: 2017/10/12 19:10:37 by smaddux          ###   ########.fr       */
+/*   Updated: 2017/10/13 02:32:01 by smaddux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 	char	*a;
 	size_t	b;
 
-	if(n == 0)
+	if (n == 0)
 		return (s1);
 	a = s1;
 	b = 0;
