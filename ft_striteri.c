@@ -6,7 +6,7 @@
 /*   By: smaddux <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/12 15:17:25 by smaddux           #+#    #+#             */
-/*   Updated: 2017/10/12 16:51:02 by smaddux          ###   ########.fr       */
+/*   Updated: 2017/10/12 21:19:52 by smaddux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	unsigned int z;
 
 	if (s == NULL)
+		return ;
+	if (f == NULL)
 		return ;
 	z = 0;
 	a = ft_strlen(s);
