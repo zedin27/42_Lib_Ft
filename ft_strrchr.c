@@ -6,7 +6,7 @@
 /*   By: smaddux <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/12 15:35:46 by smaddux           #+#    #+#             */
-/*   Updated: 2017/10/12 15:36:45 by smaddux          ###   ########.fr       */
+/*   Updated: 2017/10/12 17:26:42 by smaddux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,15 @@ char	*ft_strrchr(const char *s, int c)
 	a = ft_strlen(s);
 	b = 0;
 	z = (char*)s;
-	while (b < a)
+	while (b <= a)
 	{
-		z++;
+
 		if (*z == (char)c)
 		{
 			bool = 1;
 			y = z;
 		}
+		z++;
 		b++;
 	}
 	if (bool == 1)
