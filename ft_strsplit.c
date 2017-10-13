@@ -6,7 +6,7 @@
 /*   By: smaddux <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/12 15:37:15 by smaddux           #+#    #+#             */
-/*   Updated: 2017/10/13 01:22:41 by smaddux          ###   ########.fr       */
+/*   Updated: 2017/10/13 01:26:10 by smaddux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,25 @@
 /*
 **y0 I need a word count function fml
 */
+static int        ft_strcount(char const *s, char c)
+{
+    int        count;
+    size_t    i;
+
+    i = 0;
+    count = 0;
+    while (s[i])
+    {
+        while (s[i] == c)
+            i++;
+        while (s[i] && s[i] != c)
+            i++;
+        if (s[i - 1] != c)
+            count++;
+    }
+    return (count);
+}
+
 static char    *ft_strsep(char const *s, int len, long i)
 {
     char    *str;
