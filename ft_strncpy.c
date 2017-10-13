@@ -6,7 +6,7 @@
 /*   By: smaddux <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/12 15:29:52 by smaddux           #+#    #+#             */
-/*   Updated: 2017/10/12 15:31:19 by smaddux          ###   ########.fr       */
+/*   Updated: 2017/10/12 21:04:12 by smaddux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 	size_t	a;
 	size_t	b;
 
+	if(len == 0)
+		return(dst);
 	b = ft_strlen(src);
 	a = 0;
 	save = dst;
