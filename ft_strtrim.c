@@ -6,11 +6,15 @@
 /*   By: smaddux <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/12 15:45:56 by smaddux           #+#    #+#             */
-/*   Updated: 2017/10/12 17:02:01 by smaddux          ###   ########.fr       */
+/*   Updated: 2017/10/12 22:16:47 by smaddux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** ft_strnew(0) is more consistent than simply returning "" ?
+*/
 
 static int	ft_boundspacecount(char const *a)
 {
@@ -46,7 +50,7 @@ char		*ft_strtrim(char const *s)
 	while (*a == ' ' || *a == '\n' || *a == '\t')
 		a++;
 	if (*a == '\0')
-		return ("");
+		return (ft_strnew(0));
 	c = ft_boundspacecount(s);
 	b = malloc(sizeof(char) * (ft_strlen(s) - c + 1));
 	if (b == NULL)
